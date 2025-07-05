@@ -1,15 +1,15 @@
 import React, { useState } from 'react'
 
-const Form =  ({
-  username, setUsername,
-  discordRole, setDiscordRole,
-  iqLevel, setIqLevel,
-  topActivity, setTopActivity,
-  occupation, setOccupation,
-  bullish, setBullish,
-  motto, setMotto,
-  setPhoto
-})  => {
+const Form = ({
+    username, setUsername,
+    discordRole, setDiscordRole,
+    iqLevel, setIqLevel,
+    topActivity, setTopActivity,
+    occupation, setOccupation,
+    bullish, setBullish,
+    motto, setMotto,
+    setPhoto
+}) => {
 
     // const [username, setUsername] = useState('');
     // const [discordRole, setDiscotrbrthrdRole] = useState('Inquirer');
@@ -42,7 +42,7 @@ const Form =  ({
         const link = document.createElement('a');
         link.download = 'custom-image.png';
         link.href = canvas.toDataURL();
-        link.click(); n
+        link.click();
     }
 
     return (
@@ -50,8 +50,8 @@ const Form =  ({
         <form onSubmit={handleSubmit}>
             <div className="space-y-4">
 
-                <div className="flex  gap-4">
-                    <div className='w-1/2'>
+                <div className="flex flex-col sm:flex-row gap-4">
+                    <div className='w-full sm:w-1/2'>
                         <label className="block text-md font-medium">Username</label>
                         <input
                             type="text"
@@ -61,12 +61,12 @@ const Form =  ({
                             placeholder="Enter your name"
                         />
                     </div>
-                    <div className='w-1/2'>
+                    <div className='w-full sm:w-1/2'>
                         <label className="block text-md font-medium  mb-1">Discord Role</label>
                         <select
                             value={discordRole}
                             onChange={(e) => setDiscordRole(e.target.value)}
-                            className="w-full bg-gray-800 text-white border border-gray-600 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
+                            className="w-full bg-gray-800 text-white border border-gray-600 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
                         >
                             <option value="Inquirer">🧿 Inquirer</option>
                             <option value="Wanderer">🌌 Wanderer</option>
@@ -82,13 +82,13 @@ const Form =  ({
                     </div>
                 </div>
 
-                <div className="flex gap-4">
-                    <div className='w-1/2'>
+                <div className="flex flex-col sm:flex-row gap-4">
+                    <div className='w-full sm:w-1/2'>
                         <label className="block text-md font-medium  mb-1">Intuit Occupation</label>
                         <select
                             value={occupation}
                             onChange={(e) => setOccupation(e.target.value)}
-                            className="w-full bg-gray-800 text-white border border-gray-600 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
+                            className="w-full bg-gray-800 text-white border border-gray-600 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
                         >
                             <option value="Content Ninja">🥷 Content Ninja</option>
                             <option value="Psi-Class Researcher">🧪 Psi-Class Researcher</option>
@@ -103,31 +103,31 @@ const Form =  ({
                         </select>
 
                     </div>
-                    <div className='w-1/2'>
+                    <div className='w-full sm:w-1/2'>
                         <label className="block text-md font-medium  mb-1">IQ Level</label>
                         <select
                             value={iqLevel}
                             onChange={(e) => setIqLevel(e.target.value)}
-                            className="w-full bg-gray-800 text-white border border-gray-600 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
+                            className="w-full bg-gray-800 text-white border border-gray-600 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
                         >
-                            <option value="<100k">Less than 100,000 IQ points</option>
-                            <option value="100k-500k">100,000 - 500,000 IQ points</option>
-                            <option value="500k-2m">500,000 - 2,000,000 IQ points</option>
-                            <option value="2m-5m">2,000,000 - 5,000,000 IQ points</option>
-                            <option value="5m-10m">5,000,000 - 10,000,000 IQ points</option>
-                            <option value=">10m">More than 10,000,000 IQ points</option>
+                            <option value="I need more brain juice">Less than 100,000 IQ points</option>
+                            <option value="Basic instincts coming online">100,000 - 500,000 IQ points</option>
+                            <option value="My wisdom is growing">500,000 - 2,000,000 IQ points</option>
+                            <option value="Thoughts are syncing with the graph">2,000,000 - 5,000,000 IQ points</option>
+                            <option value="Einstein has nothing on me">5,000,000 - 10,000,000 IQ points</option>
+                            <option value="I am the source of truth">More than 10,000,000 IQ points</option>
                         </select>
 
                     </div>
                 </div>
 
-                <div className="flex gap-4">
-                    <div className='w-1/2'>
+                <div className="flex flex-col sm:flex-row gap-4">
+                    <div className='w-full sm:w-1/2'>
                         <label className="block text-md font-medium  mb-1">Top Community Activity</label>
                         <select
                             value={topActivity}
                             onChange={(e) => setTopActivity(e.target.value)}
-                            className="w-full bg-gray-800 text-white border border-gray-600 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
+                            className="w-full bg-gray-800 text-white border border-gray-600 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
                         >
                             <option value="Decoding Lore Signals">🧩 Decoding Lore Signals</option>
                             <option value="UFO in Voice Chat">🛸 UFO in Voice Chat</option>
@@ -141,12 +141,12 @@ const Form =  ({
                         </select>
 
                     </div>
-                    <div className='w-1/2'>
+                    <div className='w-full sm:w-1/2'>
                         <label className="block text-md font-medium  mb-1">How Bullish are you</label>
                         <select
                             value={bullish}
                             onChange={(e) => setBullish(e.target.value)}
-                            className="w-full bg-gray-800 text-white border border-gray-600 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
+                            className="w-full bg-gray-800 text-white border border-gray-600 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
                         >
                             <option value="Prehistoric Pre-Sale">🦴 Prehistoric Pre-Sale</option>
                             <option value="Mildly Paranoid Optimist">🤖 Mildly Paranoid Optimist</option>

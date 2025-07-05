@@ -1,8 +1,8 @@
-import { useEffect, useRef, useState } from 'react'
-// import templateImg from './assets/intuitpass.png'
-import templateImg from './assets/bigid.jpg'
+import { useEffect, useRef, useState } from 'react';
+// import templateImg from './assets/intuitpass.png';
+import templateImg from './assets/bigid.jpg';
 
-import './App.css'
+import './App.css';
 import Navbar from './components/Navbar';
 import Form from './components/Form';
 
@@ -16,46 +16,53 @@ function App() {
   const [bullish, setBullish] = useState('');
   const [motto, setMotto] = useState('');
   const [photo, setPhoto] = useState(null);
+  const [template, setTemplate] = useState(null);
 
-
-  const drawCanvas = () => {
-    const canvas = canvasRef.current;
-    const ctx = canvas.getContext('2d');
-
-    // Clear previous content
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    // Draw the template background
+  // ✅ Load the template ONCE
+  useEffect(() => {
     const bg = new Image();
     bg.src = templateImg;
     bg.onload = () => {
-      ctx.drawImage(bg, 0, 0, canvas.width, canvas.height);
+      setTemplate(bg);
+    };
+  }, []);
 
-      // Draw uploaded photo if available
+  // ✅ Redraw canvas on updates
+  useEffect(() => {
+    const drawCanvas = () => {
+      const canvas = canvasRef.current;
+      const ctx = canvas.getContext('2d');
+
+      if (!template) return;
+
+      // Clear canvas
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Draw template
+      ctx.drawImage(template, 0, 0, canvas.width, canvas.height);
+
+      // Draw uploaded photo
       if (photo) {
+        const maxWidth = 220;
+        const maxHeight = 220;
 
-const maxWidth = 220;
-const maxHeight = 220;
+        const imgWidth = photo.width;
+        const imgHeight = photo.height;
 
-const imgWidth = photo.width;
-const imgHeight = photo.height;
+        const widthRatio = maxWidth / imgWidth;
+        const heightRatio = maxHeight / imgHeight;
+        const scale = Math.min(widthRatio, heightRatio);
 
-const widthRatio = maxWidth / imgWidth;
-const heightRatio = maxHeight / imgHeight;
-const scale = Math.min(widthRatio, heightRatio); // Preserve aspect ratio
+        const drawWidth = imgWidth * scale;
+        const drawHeight = imgHeight * scale;
 
-const drawWidth = imgWidth * scale;
-const drawHeight = imgHeight * scale;
-
-
-ctx.drawImage(photo, 242, 179, drawWidth, drawHeight);
+        ctx.drawImage(photo, 242, 179, drawWidth, drawHeight);
       }
 
-      // Draw the name
+      // Draw text fields
       ctx.font = 'bold 36px Arial';
       ctx.fillStyle = '#fff';
-      ctx.textBaseline = 'top'
-
+      ctx.textBaseline = 'top';
 
       ctx.fillText(username, 785, 420);
       ctx.fillText(discordRole, 785, 580);
@@ -65,12 +72,11 @@ ctx.drawImage(photo, 242, 179, drawWidth, drawHeight);
       ctx.fillText(bullish, 1305, 720);
       ctx.fillText(motto, 260, 300);
     };
-  };
 
-  useEffect(() => {
     drawCanvas();
-  }, [username, discordRole, iqLevel, topActivity, occupation, bullish, motto, photo]);
+  }, [template, username, discordRole, iqLevel, topActivity, occupation, bullish, motto, photo]);
 
+  // ✅ Handle image upload
   const handlePhotoUpload = (e) => {
     const file = e.target.files[0];
     if (!file) return;
@@ -84,13 +90,14 @@ ctx.drawImage(photo, 242, 179, drawWidth, drawHeight);
     reader.readAsDataURL(file);
   };
 
+  // ✅ Handle download
   const handleDownload = () => {
     const canvas = canvasRef.current;
     const link = document.createElement('a');
     link.download = 'custom-image.png';
     link.href = canvas.toDataURL();
-    link.click(); n
-  }
+    link.click(); // removed stray "n"
+  };
 
   return (
     <main>
@@ -106,7 +113,9 @@ ctx.drawImage(photo, 242, 179, drawWidth, drawHeight);
           occupation={occupation} setOccupation={setOccupation}
           bullish={bullish} setBullish={setBullish}
           motto={motto} setMotto={setMotto}
-          setPhoto={setPhoto} />
+          setPhoto={setPhoto}
+          handlePhotoUpload={handlePhotoUpload}
+        />
 
         <div className="w-full flex justify-center">
           <canvas
@@ -130,4 +139,4 @@ ctx.drawImage(photo, 242, 179, drawWidth, drawHeight);
   );
 }
 
-export default App
+export default App;
