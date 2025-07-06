@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import logo from './assets/logo.svg'
-import templateImg from './assets/bigid.jpg';
+import templateImg from './assets/bigid2.jpg';
 
 import './App.css';
 import Navbar from './components/Navbar';
@@ -39,8 +39,8 @@ function App() {
 
       // Draw uploaded photo
       if (photo) {
-        const maxWidth = 220;
-        const maxHeight = 220;
+        const maxWidth = 310;
+        const maxHeight = 340;
 
         const imgWidth = photo.width;
         const imgHeight = photo.height;
@@ -52,7 +52,7 @@ function App() {
         const drawWidth = imgWidth * scale;
         const drawHeight = imgHeight * scale;
 
-        ctx.drawImage(photo, 242, 179, drawWidth, drawHeight);
+        ctx.drawImage(photo, 155, 240, drawWidth, drawHeight);
       }
 
       // Draw text fields
@@ -75,7 +75,7 @@ function App() {
   const handlePhotoUpload = (e) => {
     const file = e.target.files[0];
     if (!file) return;
-
+    setPhoto(null);
     const reader = new FileReader();
     reader.onload = () => {
       const img = new Image();
@@ -123,7 +123,7 @@ function App() {
         <div className="text-center">
           <button
             onClick={handleDownload}
-            className="mt-4 px-6 py-2 bg-black text-white rounded-md hover:bg-blue-900 transition"
+            className="mt-4 px-6 py-2 border border-transparent bg-black text-white rounded-md hover:border-black hover:bg-white hover:text-black transition"
           >
             Download from the Overmind
           </button>
