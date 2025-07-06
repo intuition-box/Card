@@ -26,6 +26,26 @@ function App() {
     };
   }, []);
 
+  function wrapTextByWidth(ctx, text, x, y, maxWidth, lineHeight) {
+    let line = '';
+    for (let i = 0; i < text.length; i++) {
+      line += text[i];
+      const width = ctx.measureText(line).width;
+
+      if (width > maxWidth) {
+        ctx.fillText(line.trim(), x, y);
+        y += lineHeight;
+        line = '';
+      }
+    }
+
+    if (line) {
+      ctx.fillText(line.trim(), x, y);
+    }
+  }
+
+
+
   useEffect(() => {
     const drawCanvas = () => {
       const canvas = canvasRef.current;
@@ -65,7 +85,9 @@ function App() {
       ctx.fillText(occupation, 785, 720);
       ctx.fillText(iqLevel, 1308, 420);
       ctx.fillText(topActivity, 1305, 580);
-      ctx.fillText(bullish, 1305, 720);
+      wrapTextByWidth(ctx, bullish, 1305, 720, 470, 42);
+
+
       ctx.fillText(motto, 260, 300);
     };
 
