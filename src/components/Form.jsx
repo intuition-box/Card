@@ -58,7 +58,7 @@ const Form = ({
                             value={username}
                             onChange={(e) => setUsername(e.target.value)}
                             maxLength={19}
-                            className="mt-1 p-3 block w-full rounded-md border-1 border-gray-400 shadow-sm    focus:ring-blue-500 focus:border-blue-500"
+                            className="mt-1 p-3 bg-white block w-full rounded-md border-1 border-gray-400 shadow-sm    focus:ring-blue-500 focus:border-blue-500"
                             placeholder="Enter your name (max. 19 characters)"
                         />
                     </div>
@@ -67,7 +67,7 @@ const Form = ({
                         <select
                             value={discordRole}
                             onChange={(e) => setDiscordRole(e.target.value)}
-                            className="w-full bg-gray-800 text-white border border-gray-600 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
+                            className="w-full bg-gray-900 text-white border border-gray-600 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
                         >
                             <option value="Inquirer">🧿 Inquirer</option>
                             <option value="Wanderer">🌌 Wanderer</option>
@@ -89,7 +89,7 @@ const Form = ({
                         <select
                             value={occupation}
                             onChange={(e) => setOccupation(e.target.value)}
-                            className="w-full bg-gray-800 text-white border border-gray-600 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
+                            className="w-full bg-gray-900 text-white border border-gray-600 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
                         >
                             <option value="Content Ninja">🥷 Content Ninja</option>
                             <option value="Knowledge Forager">🧭 Knowledge Forager</option>
@@ -108,7 +108,7 @@ const Form = ({
                         <select
                             value={iqLevel}
                             onChange={(e) => setIqLevel(e.target.value)}
-                            className="w-full bg-gray-800 text-white border border-gray-600 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
+                            className="w-full bg-gray-900 text-white border border-gray-600 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
                         >
                             <option value="I need more brain juice">Less than 100,000 IQ points</option>
                             <option value="Basic instincts coming online">100,000 - 500,000 IQ points</option>
@@ -127,7 +127,7 @@ const Form = ({
                         <select
                             value={topActivity}
                             onChange={(e) => setTopActivity(e.target.value)}
-                            className="w-full bg-gray-800 text-white border border-gray-600 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
+                            className="w-full bg-gray-900 text-white border border-gray-600 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
                         >
                             <option value="Solving Riddles">🧠 Solving Riddles</option>
                             <option value="Creating Claims in the Portal">✍️ Creating Claims in the Portal</option>
@@ -144,7 +144,7 @@ const Form = ({
                         <select
                             value={bullish}
                             onChange={(e) => setBullish(e.target.value)}
-                            className="w-full bg-gray-800 text-white border border-gray-600 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
+                            className="w-full bg-gray-900 text-white border border-gray-600 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
                         >
                             <option value="Prehistoric Pre-Sale">🦴 Prehistoric Pre-Sale</option>
                             <option value="Mildly Paranoid Optimist">🤖 Mildly Paranoid Optimist</option>
@@ -167,7 +167,7 @@ const Form = ({
                         type="file"
                         accept="image/*"
                         onChange={handlePhotoUpload}
-                        className="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
+                        className="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border file:text-sm file:font-semibold file:shadow-2xl bg-white file:text-black hover:file:bg-blue-100"
                     />
                 </div>
             </div>

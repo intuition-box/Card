@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
 
-body{
+body {
     font-family: 'Geist';
+    background: url('assets/background.png') fixed;
     /* cursor: url('assets/cursor.png') 0 0,auto; */
 }
-
