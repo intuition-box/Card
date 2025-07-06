@@ -57,8 +57,9 @@ const Form = ({
                             type="text"
                             value={username}
                             onChange={(e) => setUsername(e.target.value)}
+                            maxLength={19}
                             className="mt-1 p-3 block w-full rounded-md border-1 border-gray-400 shadow-sm    focus:ring-blue-500 focus:border-blue-500"
-                            placeholder="Enter your name"
+                            placeholder="Enter your name (max. 19 characters)"
                         />
                     </div>
                     <div className='w-full sm:w-1/2'>
@@ -91,15 +92,14 @@ const Form = ({
                             className="w-full bg-gray-800 text-white border border-gray-600 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
                         >
                             <option value="Content Ninja">🥷 Content Ninja</option>
-                            <option value="Psi-Class Researcher">🧪 Psi-Class Researcher</option>
                             <option value="Knowledge Forager">🧭 Knowledge Forager</option>
-                            <option value="Signal Archaeologist">💾 Signal Archaeologist</option>
-                            <option value="Meme Operative Level 3">🕶️ Meme Operative Level 3</option>
-                            <option value="Vault Whisperer">🗃️ Vault Whisperer</option>
+                            <option value="Meme Operative">🕶️ Meme Operative</option>
                             <option value="Intuition Channeler">🔮 Intuition Channeler</option>
-                            <option value="Data Washer">🧼 Data Washer</option>
                             <option value="Thread Architect">🧵 Thread Architect</option>
-                            <option value="Chain-Rift Navigator">⛓️ Chain-Rift Navigator</option>
+                            <option value="Yapper-in-Chief">📣 Yapper-in-Chief</option>
+                            <option value="Lore Cartographer">🗺️ Lore Cartographer</option>
+                            <option value="Games Night Advocate">🎮 Games Night Advocate</option>
+
                         </select>
 
                     </div>
@@ -129,15 +129,13 @@ const Form = ({
                             onChange={(e) => setTopActivity(e.target.value)}
                             className="w-full bg-gray-800 text-white border border-gray-600 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
                         >
+                            <option value="Solving Riddles">🧠 Solving Riddles</option>
+                            <option value="Creating Claims in the Portal">✍️ Creating Claims in the Portal</option>
+                            <option value="Staking on Claims">💰 Staking on Claims</option>
+                            <option value="Participating in Community Challenges">🏆 Community Challenges</option>
+                            <option value="Yapping on Discord">📣 Yapping on Discord</option>
+                            <option value="Joining Spaces">🎙️ Joining Spaces</option>
                             <option value="Decoding Lore Signals">🧩 Decoding Lore Signals</option>
-                            <option value="UFO in Voice Chat">🛸 UFO in Voice Chat</option>
-                            <option value="Theory Thread Infiltration">🧠 Theory Thread Infiltration</option>
-                            <option value="Meme File Distribution">📁 Meme File Distribution</option>
-                            <option value="Watching the Network">🔭 Watching the Network</option>
-                            <option value="Portal System Maintenance">🎛️ Portal System Maintenance</option>
-                            <option value="Lost in Triple Space">🧑‍🚀 Lost in Triple Space</option>
-                            <option value="Poking the Consensus Hole">🕳️ Poking the Consensus Hole</option>
-                            <option value="Scroll Carrier on Standby">📜 Scroll Carrier on Standby</option>
                         </select>
 
                     </div>
@@ -151,12 +149,13 @@ const Form = ({
                             <option value="Prehistoric Pre-Sale">🦴 Prehistoric Pre-Sale</option>
                             <option value="Mildly Paranoid Optimist">🤖 Mildly Paranoid Optimist</option>
                             <option value="Full Moon Mode">🌕 Full Moon Mode</option>
-                            <option value="Quantum-Backed Belief">🧪 Quantum-Backed Belief</option>
-                            <option value="Bet the Simulation">🔥 Bet the Simulation</option>
-                            <option value="DCA'd Into the Multiverse">📊 DCA'd Into the Multiverse</option>
-                            <option value="Tattooed the Contract">🧿 Tattooed the Contract</option>
-                            <option value="Broadcasted My Bags to Space">🛰️ Broadcasted My Bags to Space</option>
-                            <option value="I Am the Exit Liquidity">💀 I Am the Exit Liquidity</option>
+                            <option value="Quantum-Backed Conviction">🧪 Quantum-Backed Conviction</option>
+                            <option value="Betting the Simulation">🔥 Betting the Simulation</option>
+                            <option value="DCA Until the Sun Explodes">📊 DCA Until the Sun Explodes</option>
+                            <option value="Signed the Smart Contract in Blood">🧿 Signed the Smart Contract in Blood</option>
+                            <option value="Bags Are in Orbit">🛰️ Bags Are in Orbit</option>
+                            <option value="Would Literally Die for the Protocol">💀 Would Literally Die for the Protocol</option>
+
                         </select>
 
                     </div>

@@ -129,7 +129,7 @@ function App() {
           </button>
         </div>
       </div>
-      <p className='w-full text-center text-gray-600 my-3 text-sm mx-auto'>Built for the community. Give this <a className='underline text-cyan-900' href="https://github.com/giantcoconut/intuitid">repo</a> a star if you like this tool! </p>
+      <p className='w-full text-center text-gray-600 my-3 px-4 text-sm mx-auto'>Built for the community. Give this <a className='underline text-cyan-900' href="https://github.com/giantcoconut/intuitid">repo</a> a star if you like this tool! </p>
     </main>
   );
 }
