@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-// import templateImg from './assets/intuitpass.png';
+import logo from './assets/logo.svg'
 import templateImg from './assets/bigid.jpg';
 
 import './App.css';
@@ -18,7 +18,6 @@ function App() {
   const [photo, setPhoto] = useState(null);
   const [template, setTemplate] = useState(null);
 
-  // ✅ Load the template ONCE
   useEffect(() => {
     const bg = new Image();
     bg.src = templateImg;
@@ -27,7 +26,6 @@ function App() {
     };
   }, []);
 
-  // ✅ Redraw canvas on updates
   useEffect(() => {
     const drawCanvas = () => {
       const canvas = canvasRef.current;
@@ -35,10 +33,8 @@ function App() {
 
       if (!template) return;
 
-      // Clear canvas
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      // Draw template
       ctx.drawImage(template, 0, 0, canvas.width, canvas.height);
 
       // Draw uploaded photo
@@ -76,7 +72,6 @@ function App() {
     drawCanvas();
   }, [template, username, discordRole, iqLevel, topActivity, occupation, bullish, motto, photo]);
 
-  // ✅ Handle image upload
   const handlePhotoUpload = (e) => {
     const file = e.target.files[0];
     if (!file) return;
@@ -90,20 +85,19 @@ function App() {
     reader.readAsDataURL(file);
   };
 
-  // ✅ Handle download
   const handleDownload = () => {
     const canvas = canvasRef.current;
     const link = document.createElement('a');
     link.download = 'custom-image.png';
     link.href = canvas.toDataURL();
-    link.click(); // removed stray "n"
+    link.click();
   };
 
   return (
     <main>
       <Navbar />
       <div className="max-w-2xl mx-auto p-4 space-y-6">
-        <h2 className="text-2xl font-bold">Create Your Intuition ID!</h2>
+        <h2 className="mx-auto w-max py-3 text-2xl font-semibold flex items-center gap-3">Create Your Intuition ID! <img src={logo} className='w-6' alt='intuition logo' /></h2>
 
         <Form
           username={username} setUsername={setUsername}
@@ -122,7 +116,7 @@ function App() {
             ref={canvasRef}
             width={1920}
             height={1080}
-            className="border w-[500px] h-auto border-gray-300 rounded-md shadow"
+            className="border w-[85%] sm:w-[400px] md:w-[500px] h-auto border-gray-300 rounded-md shadow"
           />
         </div>
 
@@ -135,6 +129,7 @@ function App() {
           </button>
         </div>
       </div>
+      <p className='w-full text-center text-gray-600 my-3 text-sm mx-auto'>Built for the community. Give this <a className='underline text-cyan-900' href="https://github.com/giantcoconut/intuitid">repo</a> a star if you like this tool! </p>
     </main>
   );
 }

@@ -172,15 +172,6 @@ const Form = ({
                     />
                 </div>
             </div>
-
-            {/* <div className="text-center">
-                <button
-                    onClick={handleDownload}
-                    className="mt-4 px-6 py-2 bg-black text-white rounded-md hover:bg-blue-900 transition"
-                >
-                    Download from the Overmind
-                </button>
-            </div> */}
         </form>
     )
 }
