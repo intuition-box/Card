@@ -174,6 +174,17 @@ function App() {
           >
             Download from the Overmind
           </button>
+          <br />
+          <a
+            href="https://twitter.com/intent/tweet?text=I%20just%20created%20my%20%400x intuition%20ID%2C%20try%20it%20here%20now%0A%0Ahttps%3A%2F%2Fpixie-id-generator.netlify.app%2F%0A%0A%24Trust%20your%20intuition.%20%F0%9F%91%81%EF%B8%8F
+"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button className='mt-4 px-6 py-2 border-2 border-black bg-white text-black rounded-md hover:border-white hover:bg-black hover:text-white transition'>
+              Share on Twitter
+            </button>
+          </a>
         </div>
       </div>
       <p className='w-full text-center text-gray-600 my-3 px-4 text-sm mx-auto'>Built for the community. Give this <a className='underline text-cyan-900' href="https://github.com/giantcoconut/intuitid">repo</a> a star if you like this tool! </p>
