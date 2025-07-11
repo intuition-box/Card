@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import logo from './assets/logo.svg'
-import templateImg from './assets/bigid2.jpg';
+import templateImg from './assets/template1.jpg';
+import templateImg2 from './assets/template2.jpg';
 
 import './App.css';
 import Navbar from './components/Navbar';
@@ -18,13 +19,22 @@ function App() {
   const [photo, setPhoto] = useState(null);
   const [template, setTemplate] = useState(null);
 
-  useEffect(() => {
-    const bg = new Image();
+useEffect(() => {
+  const bg = new Image();
+
+
+  const role = discordRole.toLowerCase();
+  if (role.includes('conscious') || role.includes('oracle')) {
+    bg.src = templateImg2;
+  } else {
     bg.src = templateImg;
-    bg.onload = () => {
-      setTemplate(bg);
-    };
-  }, []);
+  }
+
+  bg.onload = () => {
+    setTemplate(bg);
+  };
+}, [discordRole]);
+
 
   function wrapTextByWidth(ctx, text, x, y, maxWidth, lineHeight) {
     let line = '';
@@ -76,16 +86,28 @@ function App() {
       }
 
       // Draw text fields
-      ctx.font = 'bold 36px Arial';
+      ctx.font = 'bold 30px "Orbitron"';
       ctx.fillStyle = '#fff';
       ctx.textBaseline = 'top';
 
-      ctx.fillText(username, 785, 420);
-      ctx.fillText(discordRole, 785, 580);
+      const date = new Date()
+      const options = { month: 'long' };
+      const month = new Intl.DateTimeFormat('en-US', options).format(date);
+      const day = date.getDate()
+      const year = date.getFullYear();
+
+      const formattedDate = `${month} ${day}, ${year}`
+      console.log(date)
+
+      ctx.fillText(username, 785, 400);
+      ctx.fillText(discordRole, 785, 560);
       ctx.fillText(occupation, 785, 720);
-      ctx.fillText(iqLevel, 1308, 420);
-      ctx.fillText(topActivity, 1305, 580);
+      ctx.fillText(iqLevel, 1308, 410);
+      ctx.fillText(topActivity, 1305, 560);
       wrapTextByWidth(ctx, bullish, 1305, 720, 470, 42);
+
+      ctx.font = '500 24px "Orbitron"'; // 500 = medium weight
+      ctx.fillText(formattedDate, 1014, 860);
 
 
       ctx.fillText(motto, 260, 300);
