@@ -1,12 +1,26 @@
-# React + Vite
+# Pixie ID Generator ✨
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Pixie ID Generator** is a fun, fast, and unique way to mint your on-chain identity with @0Xintuition.
 
-Currently, two official plugins are available:
+🎉 Whether you're new to web3 or deep into the ecosystem, your Pixie ID is a personalized badge that says:  
+**“I trust my intuition.”**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Try It Out
 
-## Expanding the ESLint configuration
+👉 [Launch the App](https://pixie-id-generator.netlify.app/)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🧠 What It Does
+
+- 🌐 Generates a unique visual identity and name  
+- 📸 Lets you upload your image and customize it  
+- 🧾 Automatically creates a shareable graphic with your info  
+- 🐦 One-click share to Twitter with a pre-filled tweet  
+
+## ✨ Sample Tweet
+
+```text
+I just created my @0Xintuition ID, try it here now
+
+https://pixie-id-generator.netlify.app/
+
+$Trust your intuition. 👁️
