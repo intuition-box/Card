@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import logo from './assets/logo.svg'
 import templateImg from './assets/template1.jpg';
 import templateImg2 from './assets/template2.jpg';
+import templateImg3 from './assets/template3.jpg';
 
 import './App.css';
 import Navbar from './components/Navbar';
@@ -19,21 +20,23 @@ function App() {
   const [photo, setPhoto] = useState(null);
   const [template, setTemplate] = useState(null);
 
-useEffect(() => {
-  const bg = new Image();
+  useEffect(() => {
+    const bg = new Image();
 
 
-  const role = discordRole.toLowerCase();
-  if (role.includes('conscious') || role.includes('oracle')) {
-    bg.src = templateImg2;
-  } else {
-    bg.src = templateImg;
-  }
+    const role = discordRole.toLowerCase();
+    if (role.includes('conscious') || role.includes('oracle')) {
+      bg.src = templateImg2;
+    } else if (role.includes('core') || role.includes('templar')) {
+      bg.src = templateImg3;
+    } else {
+      bg.src = templateImg;
+    }
 
-  bg.onload = () => {
-    setTemplate(bg);
-  };
-}, [discordRole]);
+    bg.onload = () => {
+      setTemplate(bg);
+    };
+  }, [discordRole]);
 
 
   function wrapTextByWidth(ctx, text, x, y, maxWidth, lineHeight) {
@@ -86,7 +89,7 @@ useEffect(() => {
       }
 
       // Draw text fields
-      ctx.font = 'bold 30px "Orbitron"';
+      ctx.font = 'bold 28px "Orbitron"';
       ctx.fillStyle = '#fff';
       ctx.textBaseline = 'top';
 
@@ -106,7 +109,7 @@ useEffect(() => {
       ctx.fillText(topActivity, 1305, 560);
       wrapTextByWidth(ctx, bullish, 1305, 720, 470, 42);
 
-      ctx.font = '500 24px "Orbitron"'; // 500 = medium weight
+      ctx.font = '20px "Orbitron"'; // 500 = medium weight
       ctx.fillText(formattedDate, 1014, 860);
 
 
