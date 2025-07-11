@@ -176,7 +176,7 @@ function App() {
           </button>
           <br />
           <a
-            href="https://twitter.com/intent/tweet?text=I%20just%20created%20my%20%400x intuition%20ID%2C%20try%20it%20here%20now%0A%0Ahttps%3A%2F%2Fpixie-id-generator.netlify.app%2F%0A%0A%24Trust%20your%20intuition.%20%F0%9F%91%81%EF%B8%8F
+            href="https://twitter.com/intent/tweet?text=I%20just%20created%20my%20%400xintuition%20ID%2C%20try%20it%20here%20now%0A%0Ahttps%3A%2F%2Fpixie-id-generator.netlify.app%2F%0A%0A%24Trust%20your%20intuition.%20%F0%9F%91%81%EF%B8%8F
 "
             target="_blank"
             rel="noopener noreferrer"
