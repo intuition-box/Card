@@ -89,7 +89,7 @@ function App() {
       }
 
       // Draw text fields
-      ctx.font = 'bold 28px "Orbitron"';
+      ctx.font = 'bold 27.5px "Orbitron"';
       ctx.fillStyle = '#fff';
       ctx.textBaseline = 'top';
 

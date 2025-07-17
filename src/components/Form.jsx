@@ -95,6 +95,7 @@ const Form = ({
                             <option value="Relicorrrr">🧿 Relicorrrr</option>
                             <option value="Knowledge Forager">🧭 Knowledge Forager</option>
                             <option value="Meme Operative">🕶️ Meme Operative</option>
+                            <option value="Certified Shitposter">💩 Certified Shitposter</option>
                             <option value="Intuition Channeler">🔮 Intuition Channeler</option>
                             <option value="Thread Architect">🧵 Thread Architect</option>
                             <option value="Yapper-in-Chief">📣 Yapper-in-Chief</option>
@@ -154,7 +155,7 @@ const Form = ({
                             <option value="DCA Until the Sun Explodes">📊 DCA Until the Sun Explodes</option>
                             <option value="Signed the Smart Contract in Blood">🧿 Signed the Smart Contract in Blood</option>
                             <option value="Bags Are in Orbit">🛰️ Bags Are in Orbit</option>
-                            <option value="Would Literally Die for the Protocol">💀 Would Literally Die for the Protocol</option>
+                            <option value="I'd Literally Die for the Protocol">💀 Would Literally Die for the Protocol</option>
 
                         </select>
 
