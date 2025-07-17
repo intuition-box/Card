@@ -92,12 +92,12 @@ const Form = ({
                             className="w-full bg-gray-900 text-white border border-gray-600 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
                         >
                             <option value="Content Ninja">🥷 Content Ninja</option>
+                            <option value="Relicorrrr">🧿 Relicorrrr</option>
                             <option value="Knowledge Forager">🧭 Knowledge Forager</option>
                             <option value="Meme Operative">🕶️ Meme Operative</option>
                             <option value="Intuition Channeler">🔮 Intuition Channeler</option>
                             <option value="Thread Architect">🧵 Thread Architect</option>
                             <option value="Yapper-in-Chief">📣 Yapper-in-Chief</option>
-                            <option value="Lore Cartographer">🗺️ Lore Cartographer</option>
                             <option value="Games Night Advocate">🎮 Games Night Advocate</option>
 
                         </select>
