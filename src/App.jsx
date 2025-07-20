@@ -175,8 +175,9 @@ function App() {
             Download from the Overmind
           </button>
           <br />
+
           <a
-            href="https://twitter.com/intent/tweet?url=https://x.com/0xPixi3/status/1947073736357630213&text=I just created my %400xIntuition ID try it now 👇%0A%0Ahttps%3A%2F%2Fpixie-id-generator.netlify.app%2F%0A%0A%23TrustYourIntuition 🦉"
+            href="https://twitter.com/intent/tweet?url=https://x.com/0xPixi3/status/1947076763839795550&text=I just created my %400xIntuition ID try it now 👇%0A%0Ahttps%3A%2F%2Fpixie-id-generator.netlify.app%2F%0A%0A%23TrustYourIntuition 🦉"
             target="_blank"
             rel="noopener noreferrer"
           >
