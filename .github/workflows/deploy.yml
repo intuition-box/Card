@@ -1,3 +1,4 @@
+# .github/workflows/deploy.yml
 name: Deploy to GitHub Pages
 
 on:
@@ -7,7 +8,7 @@ on:
 
 jobs:
   build:
-    name: Build Docusaurus with Bun
+    name: Build Vite site with Bun
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -25,23 +26,28 @@ jobs:
       - name: Build website
         run: bun run build
 
+      # (optional but nice) show what's in dist
+      - name: List build output
+        run: ls -la dist
+
+      # (optional) Configure Pages
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
       - name: Upload Build Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: build
+          path: dist   # <-- was 'build'
 
   deploy:
     name: Deploy to GitHub Pages
     needs: build
-
     permissions:
       pages: write
       id-token: write
-
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-
     runs-on: ubuntu-latest
     steps:
       - name: Deploy to GitHub Pages
